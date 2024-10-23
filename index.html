@@ -16,19 +16,26 @@
         <p>Click an item to add it to your cart.</p>
         <div id="button-group" class="columns">
           <div class="column">
-            <button class="button" id="apple">🍎 Apple: $0.75</button>
+            <button class="button is-small" id="apple">🍎 Apple: $0.75</button>
           </div>
           <div class="column">
-            <button class="button" id="banana">🍌 Banana: $0.30</button>
+            <button class="button is-small" id="banana">🍌 Banana: $0.30</button>
           </div>
           <div class="column">
-            <button class="button" id="mango">🥭 Mango: $1.25</button>
+            <button class="button is-small" id="mango">🥭 Mango: $1.25</button>
           </div>
           <div class="column">
-            <button class="button" id="imposter">🥭 Imposter: $2.25</button>
+            <button class="button is-small" id="imposter"> Imposter: $2.25</button>
+          </div>
+        </div>
+        <div id="single-button">
+          <div id="clear-button">
+            <label aria-hidden="true" for="empty-image">Empty Your Cart</label><br>
+            <img aria-hidden="true" id="empty-image" src="img/empty.png" alt="Empty Cart">
           </div>
         </div>
       </section>
+
       <section class="section">
         <h3>Your Items:</h3>
         <div id="shopping-cart"></div>
