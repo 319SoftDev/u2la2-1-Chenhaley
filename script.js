@@ -1,50 +1,58 @@
 console.log("script running");
 
-//p1
+let totalInCents = 0;
+
 const appleButton = document.querySelector("#apple");
 const bananaButton = document.querySelector("#banana");
 const mangoButton = document.querySelector("#mango");
-const shoppingList = document.querySelector("#shopping-cart");
 const imposterButton = document.querySelector("#imposter");
-console.log(appleButton);
-console.log(shoppingList);
+const shoppingCart = document.querySelector("#shopping-cart");
+const totalSpan = document.querySelector("#total-span");
 
-//p2
+const clearButton = document.querySelector("#clear-button");
+
+console.log(appleButton, bananaButton, mangoButton, shoppingCart, totalSpan);
+
+const updateTotal = () => {
+  totalSpan.innerHTML = totalInCents / 100;
+};
+
 const addApple = () => {
-  // alert("apple button under construction");
-  shoppingList.innerHTML += `<p>Apple</p>`;
+  shoppingCart.innerHTML = `<li>Apple</li>`;
   totalInCents += 75;
   updateTotal();
 };
+appleButton.addEventListener("click", addApple);
 
 const addBanana = () => {
-  shoppingList.innerHTML += `<p>Banana</p>`;
+  shoppingCart.innerHTML = `<li>Banana</li>`;
   totalInCents += 30;
   updateTotal();
 };
+bananaButton.addEventListener("click", addBanana);
 
-  const addMango = () => {
-  shoppingList.innerHTML += `<p>Mango</p>`;
+const addMango = () => {
+  shoppingCart.innerHTML = `<li>Mango</li>`;
   totalInCents += 125;
   updateTotal();
-  };
+};
+mangoButton.addEventListener("click", addMango);
 
-  const addimposter = () => {
-    shoppingList.innerHTML += `<p>Imposter</p>`;
-    updateTotal();
-  };
+const addImposter = () => {
+  shoppingList.innerHTML += `<p>Imposter</p>`;
+  totalInCents += 225;
+  updateTotal();
+};
+imposterButton.addEventListener("click", addImposter);
+
+const emptyCart = () => {
+  shoppingCart.innerHTML = '';
+  totalInCents = 0;
+  updateTotal();
+}
+clearButton.addEventListener("click", emptyCart);
+
+  
 //p3
 // total.addEventListener("click", updateTotal());
 
-appleButton.addEventListener("click", addApple);
-bananaButton.addEventListener("click", addBanana);
-mangoButton.addEventListener("click", addMango);
-imposterButton.addEventListener("click", addimposter);
-
-//s1
-const total = document.querySelector("#total-span");
-
-const updateTotal = () => {
-  total.innerHTML = totalInCents/100;
-
-};
